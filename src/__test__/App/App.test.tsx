@@ -1,29 +1,18 @@
-import * as React from "react";
+import React, { Suspense } from "react";
 import { render } from "react-dom";
 import { act } from "react-dom/test-utils";
 import { MemoryRouter } from "react-router-dom";
+import { create } from "react-test-renderer";
 import App from "../../App";
+import Spinner from "../../Components/Spinner";
 
-it("navigates home when you click the logo", () => {
-  const root = document.createElement("div");
-  document.body.appendChild(root);
-
-  // Render app
-  render(
-    <MemoryRouter initialEntries={["/"]}>
-      <App />
-    </MemoryRouter>,
-    root
-  );
-
-  // Interact with page
-  act(() => {
-    const goHomeLink = document.querySelector(".navigation-title");
-    // Click it
-    goHomeLink &&
-      goHomeLink.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+describe("App component render", () => {
+  it("rendered lazily", async () => {
+    const root = create(
+      <Suspense fallback={<Spinner />}>
+        <App />
+      </Suspense>
+    );
+    expect(root).toMatchSnapshot();
   });
-
-  const searchContainer = document.querySelector(".search-container");
-  expect(searchContainer && searchContainer.children.length).toBe(1);
 });

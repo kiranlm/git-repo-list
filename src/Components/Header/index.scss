@@ -11,5 +11,19 @@
     top: 0;
     width: 100%;
     z-index: 2;
+    .container {
+      margin: 0 auto;
+      max-width: 112rem;
+      padding: 0 2rem;
+      position: relative;
+      width: 100%;
+      .navigation-title {
+        display: inline;
+        font-size: 1.6rem;
+        line-height: 5.2rem;
+        padding: 0;
+        text-decoration: none;
+      }
+    }
   }
 }

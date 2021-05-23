@@ -6,8 +6,8 @@ const Header: FC = () => {
     <div className="header">
       <nav className="navigation">
         <section className="container">
-          <a className="navigation-title" href="#" title="Git repo search">
-            Git Repo Search
+          <a className="navigation-title" href="/" title="Git repo search">
+            <strong>Github</strong> Repo Search
           </a>
         </section>
       </nav>

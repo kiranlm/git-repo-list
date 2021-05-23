@@ -1,6 +1,7 @@
 import React, { FC } from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Search from "./Components/Search";
+import RepoList from "./Components/RepoList";
 import Layout from "./Layout";
 
 const App: FC = () => {
@@ -10,6 +11,7 @@ const App: FC = () => {
         <Layout>
           <Switch>
             <Route exact path="/" component={Search} />
+            <Route exact path="/repos/:username" component={RepoList} />
           </Switch>
         </Layout>
       </Router>

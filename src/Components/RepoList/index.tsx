@@ -1,23 +1,18 @@
 import React, { FC, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getRepos } from "../../Services/github";
-import {
-  IGitRepoResponse,
-  IGitRepo,
-  IParamType,
-} from "../../Models/interfaces";
+import { IGitRepo, IParamType } from "../../Models/interfaces";
 import "./index.scss";
 import Spinner from "../Spinner";
 
 const RepoList: FC = () => {
   const { username } = useParams<IParamType>();
-  const [repos, setRepos] = useState<any>([]);
+  const [repos, setRepos] = useState<IGitRepo[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
     setLoading(true);
     (async () => {
-      const reposList: IGitRepoResponse<IGitRepo>[] =
-        (await getRepos(username, 1)) || [];
+      const reposList: IGitRepo[] = await getRepos(username);
       if (reposList.length) {
         setRepos(reposList);
       }

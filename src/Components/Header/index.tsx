@@ -3,7 +3,7 @@ import "./index.scss";
 
 const Header: FC = () => {
   return (
-    <div className="header">
+    <header className="header">
       <nav className="navigation">
         <section className="container">
           <a className="navigation-title" href="/" title="Git repo search">
@@ -11,7 +11,7 @@ const Header: FC = () => {
           </a>
         </section>
       </nav>
-    </div>
+    </header>
   );
 };
 

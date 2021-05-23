@@ -9,8 +9,13 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <>
+      <a className="skip-link" href="/">
+        Skip to main
+      </a>
       <Header />
-      <div className="app-container">{children}</div>
+      <main id="main" className="app-container">
+        {children}
+      </main>
     </>
   );
 };

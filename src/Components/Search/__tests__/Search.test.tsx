@@ -1,14 +1,14 @@
 import * as React from "react";
-import { ShallowWrapper, shallow } from "enzyme";
+// import { ShallowWrapper, shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import Search from "..";
 
 describe("Search", () => {
-  let wrapper: ShallowWrapper;
+  // let wrapper: ShallowWrapper;
 
-  beforeEach(() => {
-    wrapper = shallow(<Search />);
-  });
+  // beforeEach(() => {
+  //   wrapper = shallow(<Search />);
+  // });
 
   it("renders correctly", () => {
     const tree = renderer.create(<Search />).toJSON();

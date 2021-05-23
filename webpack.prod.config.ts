@@ -11,7 +11,7 @@ const config: Configuration = merge(common, {
   output: {
     path: resolve(__dirname, "build"),
     filename: "[name].[contenthash].js",
-    publicPath: "",
+    publicPath: "/",
   },
   module: {
     rules: [

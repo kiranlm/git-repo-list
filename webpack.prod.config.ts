@@ -3,6 +3,7 @@ import { Configuration } from "webpack";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { merge } from "webpack-merge";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import common from "./webpack.common.config";
 
 const config: Configuration = merge(common, {
@@ -18,12 +19,16 @@ const config: Configuration = merge(common, {
         test: /\.(sa|sc)ss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
+      // { test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/, loader: "file" },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
       chunkFilename: "[id].css",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "static" }],
     }),
     new CleanWebpackPlugin(),
   ],

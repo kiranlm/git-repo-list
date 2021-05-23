@@ -10,7 +10,6 @@ const Search: FC = () => {
   const onChangeUsername = (e: React.FormEvent<HTMLInputElement>) => {
     const username = e.currentTarget.value;
     if (username && !!username.match(/^[a-zA-Z0-9_]*$/)) {
-      console.log(username);
       setUsername(username);
       setError("");
     } else {

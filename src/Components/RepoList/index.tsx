@@ -4,6 +4,7 @@ import { getRepos } from "../../Services/github";
 import { IGitRepo, IParamType } from "../../Models/interfaces";
 import "./index.scss";
 import Spinner from "../Spinner";
+import { Link } from "react-router-dom";
 
 const RepoList: FC = () => {
   const { username } = useParams<IParamType>();
@@ -40,9 +41,9 @@ const RepoList: FC = () => {
               <td>{item.watchers_count}</td>
               <td>{item.created_at}</td>
               <td>
-                <a href={item.html_url} target="__blank" title={item.name}>
+                <Link to={`/repo/${username}/${item.name}`} title={item.name}>
                   Go to repo
-                </a>
+                </Link>
               </td>
             </tr>
           ))}

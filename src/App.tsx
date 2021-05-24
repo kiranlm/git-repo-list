@@ -1,5 +1,6 @@
 import React, { FC, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import RepoItem from "./Components/RepoItem";
 import Spinner from "./Components/Spinner";
 import Layout from "./Layout";
 
@@ -15,6 +16,7 @@ const App: FC = () => {
             <Switch>
               <Route exact path="/" component={Search} />
               <Route exact path="/repos/:username" component={RepoList} />
+              <Route exact path="/repo/:username/:repo" component={RepoItem} />
             </Switch>
           </Layout>
         </Router>

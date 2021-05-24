@@ -1,0 +1,8 @@
+.item-container {
+  width: 85%;
+  .files {
+    max-height: 300px;
+    min-width: 80%;
+    overflow: auto;
+  }
+}

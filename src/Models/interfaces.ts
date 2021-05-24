@@ -6,8 +6,17 @@ export interface IGitRepo {
   watchers_count: number;
 }
 
+export interface IGitRepoItem {
+  name: string;
+  size: string;
+  download_url: string;
+  type: string;
+}
+
 export interface IParamType {
   username: string;
+  repo?: string;
+  url?: string;
 }
 
 export interface IGitRepoResponse<T> {

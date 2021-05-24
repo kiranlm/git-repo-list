@@ -45,4 +45,10 @@ npm run test
 
 Included continuous deployment with CircleCI and Heroku
 
+### Lighthouse score
+
+Improved lighthouse score in localhost, see the screenshot below:
+
+![Lighthouse score](https://github.com/kiranlm/git-repo-list/blob/main/git-images/lighthouse.png?raw=true)
+
 Made with :heart: by **`kiranlm`**

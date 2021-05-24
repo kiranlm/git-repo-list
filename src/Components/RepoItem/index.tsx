@@ -23,7 +23,6 @@ const RepoItem: FC = () => {
             item.name.toLowerCase() === "readme.md" ||
             item.name.toLowerCase() === "readme"
         );
-        console.log(filesList);
         if (readMeFile && readMeFile.download_url) {
           const contents = await getReadMeContent(readMeFile.download_url);
           setReadMe(contents);
